@@ -17,7 +17,7 @@ const ProductList = ({ category, onAddToCart }) => {
     <div className="product-list">
       <h2>Available Products</h2>
       {filteredProducts.length === 0 ? (
-        <p>No products found for this category.</p>
+        <p>No products available.</p>
       ) : (
         filteredProducts.map((product) => (
           <ProductCard
