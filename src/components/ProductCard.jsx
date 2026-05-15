@@ -3,9 +3,7 @@ import styles from '../styles/ProductCard.module.css'
 
 const ProductCard = ({ product, onAddToCart }) => {
   const handleAdd = () => {
-    if (product.inStock) {
-      onAddToCart(product)
-    }
+    onAddToCart(product)
   }
 
   return (
@@ -15,11 +13,7 @@ const ProductCard = ({ product, onAddToCart }) => {
       <h3>{product.name}</h3>
       <p>Price: {product.price}</p>
       <p>Status: {product.inStock ? 'In Stock' : 'Out of Stock'}</p>
-      <button
-        data-testid={'product-' + product.id}
-        onClick={handleAdd}
-        disabled={!product.inStock}
-      >
+      <button data-testid={'product-' + product.id} onClick={handleAdd}>
         Add to Cart
       </button>
     </div>
